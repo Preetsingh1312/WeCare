@@ -13,6 +13,23 @@ import { errorMiddleware } from "./middlewares/erroeMiddleware.js";
 
 const app=express();
 
+const allowedOrigins = ["https://we-care-sepia.vercel.app"];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+  },
+  methods: 'GET,POST,PUT,DELETE,HEAD,PATCH',
+  allowedHeaders: 'Content-Type,X-Api-Key',
+  credentials: true,
+  
+}));
+
+
 config({path:"./config/config.env"});
 
 
