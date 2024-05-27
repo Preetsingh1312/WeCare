@@ -18,9 +18,12 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user/admin/logout", {
-        withCredentials: true,
-      })
+      .get(
+        "https://wecare-rcx6.onrender.com/api/v1/user/admin/logout",
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         toast.success(res.data.message);
         setIsAuthenticated(false);
@@ -56,10 +59,12 @@ const Sidebar = () => {
   return (
     <>
       <nav
-        style={!isAuthenticated ? { display: "none" } : { display: "flex" }}
+        style={
+          !isAuthenticated ? { display: "none" } : { display: "flex" }
+        }
         className={show ? "show sidebar" : "sidebar"}
       >
-        <div className="links">
+        <div className='links'>
           <TiHome onClick={gotoHomePage} />
           <FaUserDoctor onClick={gotoDoctorsPage} />
           <MdAddModerator onClick={gotoAddNewAdmin} />
@@ -69,10 +74,15 @@ const Sidebar = () => {
         </div>
       </nav>
       <div
-        className="wrapper"
-        style={!isAuthenticated ? { display: "none" } : { display: "flex" }}
+        className='wrapper'
+        style={
+          !isAuthenticated ? { display: "none" } : { display: "flex" }
+        }
       >
-        <GiHamburgerMenu className="hamburger" onClick={() => setShow(!show)} />
+        <GiHamburgerMenu
+          className='hamburger'
+          onClick={() => setShow(!show)}
+        />
       </div>
     </>
   );

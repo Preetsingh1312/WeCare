@@ -58,10 +58,14 @@ const AddNewDoctor = () => {
       formData.append("doctorDepartment", doctorDepartment);
       formData.append("docAvatar", docAvatar);
       await axios
-        .post("http://localhost:4000/api/v1/user/doctor/addnew", formData, {
-          withCredentials: true,
-          headers: { "Content-Type": "multipart/form-data" },
-        })
+        .post(
+          "https://wecare-rcx6.onrender.com/api/v1/user/doctor/addnew",
+          formData,
+          {
+            withCredentials: true,
+            headers: { "Content-Type": "multipart/form-data" },
+          }
+        )
         .then((res) => {
           toast.success(res.data.message);
           setIsAuthenticated(true);
@@ -84,55 +88,59 @@ const AddNewDoctor = () => {
     return <Navigate to={"/login"} />;
   }
   return (
-    <section className="page">
-      <section className="container add-doctor-form">
-      <div className='logo'><h1>WeCare</h1></div>
-        <h1 className="form-title">REGISTER A NEW DOCTOR</h1>
+    <section className='page'>
+      <section className='container add-doctor-form'>
+        <div className='logo'>
+          <h1>WeCare</h1>
+        </div>
+        <h1 className='form-title'>REGISTER A NEW DOCTOR</h1>
         <form onSubmit={handleAddNewDoctor}>
-          <div className="first-wrapper">
+          <div className='first-wrapper'>
             <div>
               <img
                 src={
-                  docAvatarPreview ? `${docAvatarPreview}` : "/docHolder.jpg"
+                  docAvatarPreview
+                    ? `${docAvatarPreview}`
+                    : "/docHolder.jpg"
                 }
-                alt="Doctor Avatar"
+                alt='Doctor Avatar'
               />
-              <input type="file" onChange={handleAvatar} />
+              <input type='file' onChange={handleAvatar} />
             </div>
             <div>
               <input
-                type="text"
-                placeholder="First Name"
+                type='text'
+                placeholder='First Name'
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
               <input
-                type="text"
-                placeholder="Last Name"
+                type='text'
+                placeholder='Last Name'
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
               />
               <input
-                type="text"
-                placeholder="Email"
+                type='text'
+                placeholder='Email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
-                type="number"
-                placeholder="Mobile Number"
+                type='number'
+                placeholder='Mobile Number'
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
               <input
-                type="number"
-                placeholder="NIC"
+                type='number'
+                placeholder='NIC'
                 value={nic}
                 onChange={(e) => setNic(e.target.value)}
               />
               <input
                 type={"date"}
-                placeholder="Date of Birth"
+                placeholder='Date of Birth'
                 value={dob}
                 onChange={(e) => setDob(e.target.value)}
               />
@@ -140,13 +148,13 @@ const AddNewDoctor = () => {
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
               >
-                <option value="">Select Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+                <option value=''>Select Gender</option>
+                <option value='Male'>Male</option>
+                <option value='Female'>Female</option>
               </select>
               <input
-                type="password"
-                placeholder="Password"
+                type='password'
+                placeholder='Password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -156,7 +164,7 @@ const AddNewDoctor = () => {
                   setDoctorDepartment(e.target.value);
                 }}
               >
-                <option value="">Select Department</option>
+                <option value=''>Select Department</option>
                 {departmentsArray.map((depart, index) => {
                   return (
                     <option value={depart} key={index}>
@@ -165,7 +173,7 @@ const AddNewDoctor = () => {
                   );
                 })}
               </select>
-              <button type="submit">Register New Doctor</button>
+              <button type='submit'>Register New Doctor</button>
             </div>
           </div>
         </form>
