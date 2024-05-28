@@ -13,16 +13,8 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-<<<<<<< HEAD
-        const {data} = await axios.get("https://we-care-vscm.vercel.app/api/v1/appointment/getall", {withCredentials: true});
+        const {data} = await axios.get("https://wecare-1.onrender.com/api/v1/appointment/getall", {withCredentials: true});
         setAppointments(data.appointments)
-=======
-        const { data } = await axios.get(
-          "https://wecare-rcx6.onrender.com/api/v1/appointment/getall",
-          { withCredentials: true }
-        );
-        setAppointments(data.appointments);
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
       } catch (error) {
         setAppointments([]);
         console.log(
@@ -36,11 +28,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-<<<<<<< HEAD
-        `https://we-care-vscm.vercel.app/api/v1/appointment/update/${appointmentId}`,
-=======
-        `https://wecare-rcx6.onrender.com/api/v1/appointment/update/${appointmentId}`,
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
+        `https://wecare-1.onrender.com/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
       );

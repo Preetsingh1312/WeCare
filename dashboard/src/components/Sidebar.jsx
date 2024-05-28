@@ -18,18 +18,9 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     await axios
-<<<<<<< HEAD
-      .get("https://we-care-vscm.vercel.app/api/v1/user/admin/logout", {
+      .get("https://wecare-1.onrender.com/api/v1/user/admin/logout", {
         withCredentials: true,
       })
-=======
-      .get(
-        "https://wecare-rcx6.onrender.com/api/v1/user/admin/logout",
-        {
-          withCredentials: true,
-        }
-      )
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
       .then((res) => {
         toast.success(res.data.message);
         setIsAuthenticated(false);

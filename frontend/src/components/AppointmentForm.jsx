@@ -45,7 +45,7 @@ const AppointmentForm = () => {
 try {
       const hasVisitedBool = Boolean(hasVisited);
       const { data } = await axios.post(
-        "https://we-care-vscm.vercel.app/api/v1/appointment/post",
+        "https://wecare-1.onrender.com/api/v1/appointment/post",
         {
           firstName,
           lastName,
@@ -165,7 +165,7 @@ try {
                 );
               })}
             </select>
-            {/* <select
+             <select
               value={`${doctorFirstName} ${doctorLastName}`}
               onChange={(e) => {
                 const [firstName, lastName] =
@@ -188,7 +188,7 @@ try {
                     {doctor.firstName} {doctor.lastName}
                   </option>
                 ))}
-            </select> */}
+            </select> 
           </div>
           <textarea
             rows='10'

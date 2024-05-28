@@ -58,21 +58,10 @@ const AddNewDoctor = () => {
       formData.append("doctorDepartment", doctorDepartment);
       formData.append("docAvatar", docAvatar);
       await axios
-<<<<<<< HEAD
-        .post("https://we-care-vscm.vercel.app/api/v1/user/doctor/addnew", formData, {
+        .post("https://wecare-1.onrender.com/api/v1/user/doctor/addnew", formData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })
-=======
-        .post(
-          "https://wecare-rcx6.onrender.com/api/v1/user/doctor/addnew",
-          formData,
-          {
-            withCredentials: true,
-            headers: { "Content-Type": "multipart/form-data" },
-          }
-        )
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
         .then((res) => {
           toast.success(res.data.message);
           setIsAuthenticated(true);

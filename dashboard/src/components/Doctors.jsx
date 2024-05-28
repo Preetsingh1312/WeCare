@@ -11,11 +11,7 @@ const Doctors = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-<<<<<<< HEAD
-          "https://we-care-vscm.vercel.app/api/v1/user/doctors",
-=======
-          "https://wecare-rcx6.onrender.com/api/v1/user/doctors",
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
+          "https://wecare-1.onrender.com/api/v1/user/doctors",
           { withCredentials: true }
         );
         setDoctors(data.doctors);

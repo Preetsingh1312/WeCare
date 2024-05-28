@@ -10,14 +10,7 @@ const Messages = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-<<<<<<< HEAD
-        const { data } = await axios.get("https://we-care-vscm.vercel.app/api/v1/message/getall", {withCredentials: true});
-=======
-        const { data } = await axios.get(
-          "https://wecare-rcx6.onrender.com/api/v1/message/getall",
-          { withCredentials: true }
-        );
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
+        const { data } = await axios.get("https://wecare-1.onrender.com/api/v1/message/getall", {withCredentials: true});
         setMessages(data.messages);
       } catch (error) {
         console.log("ERROR OCCURED WHILE FETCHING MESSAGES:", error);
