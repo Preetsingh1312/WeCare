@@ -9,7 +9,6 @@ const NavBar = () => {
   const [show, setShow] = useState(false);
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
   const navigateTo = useNavigate();
-<<<<<<< HEAD
   const handleLogout = async()=>{
     await axios.get("https://we-care-vscm.vercel.app/api/v1/user/patient/logout", {withCredentials:true}).then(res =>{
     toast.success(res.data.message);
@@ -19,23 +18,6 @@ const NavBar = () => {
     });
   };  
   const gotoLogin = () =>{
-=======
-  const handleLogout = async () => {
-    await axios
-      .get(
-        "https://wecare-rcx6.onrender.com/api/v1/user/patient/logout",
-        { withCredentials: true }
-      )
-      .then((res) => {
-        toast.success(res.data.message);
-        setIsAuthenticated(false);
-      })
-      .catch((err) => {
-        toast.error(err.response.data.message);
-      });
-  };
-  const gotoLogin = () => {
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
     navigateTo("/login");
   };
 

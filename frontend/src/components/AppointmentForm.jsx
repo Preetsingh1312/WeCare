@@ -34,10 +34,6 @@ const AppointmentForm = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       const { data } = await axios.get(
-<<<<<<< Hhttp://localhost:4000scm.vercel.app/api/v1/user/doctors",
-=======
-        "https://wecare-rcx6.onrender.com/api/v1/user/doctors",
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
         { withCredentials: true }
       );
       setDoctors(data.doctors);
@@ -46,14 +42,10 @@ const AppointmentForm = () => {
     fetchDoctors();
   }, []);
   const handleAppointment = async (e) => {
-http://localhost:4000y {
+try {
       const hasVisitedBool = Boolean(hasVisited);
       const { data } = await axios.post(
-<<<<<<< HEAD
         "https://we-care-vscm.vercel.app/api/v1/appointment/post",
-=======
-        "https://wecare-rcx6.onrender.com/api/v1/appointment/post",
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
         {
           firstName,
           lastName,

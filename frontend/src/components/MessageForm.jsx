@@ -10,7 +10,6 @@ const MessageForm = () => {
   const [message, setMessage] = useState("");
   const handleMessage = async (e) => {
     e.preventDefault();
-<<<<<<< HEAD
     try{
       await axios.post("https://we-care-vscm.vercel.app/api/v1/message/send", {firstName, lastName, email, phone, message}, {
         withCredentials: true,
@@ -27,30 +26,6 @@ const MessageForm = () => {
       });
     } catch(error){
         toast.error(error.response.data.message);
-=======
-    try {
-      await axios
-        .post(
-          "https://wecare-rcx6.onrender.com/api/v1/message/send",
-          { firstName, lastName, email, phone, message },
-          {
-            withCredentials: true,
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then((res) => {
-          toast.success(res.data.message);
-          setFirstName("");
-          setLastName("");
-          setEmail("");
-          setPhone("");
-          setMessage("");
-        });
-    } catch (error) {
-      toast.error(error.response.data.message);
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
     }
   };
   return (

@@ -21,35 +21,11 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-<<<<<<< HEAD
       const response = await axios.post("https://we-care-vscm.vercel.app/api/v1/user/patient/register", {firstName, lastName, email, phone, nic, dob, gender, password, role: "Patient"}, {withCredentials:true, headers: {"Content-Type": "application/json"}
     });
     toast.success(response.data.message);
     setIsAuthenticated(true);
     navigateTo("/");
-=======
-      const response = await axios.post(
-        "https://wecare-rcx6.onrender.com/api/v1/user/patient/register",
-        {
-          firstName,
-          lastName,
-          email,
-          phone,
-          nic,
-          dob,
-          gender,
-          password,
-          role: "Patient",
-        },
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-      toast.success(response.data.message);
-      setIsAuthenticated(true);
-      navigateTo("/");
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
     } catch (error) {
       toast.error(error.response.data.message);
     }
