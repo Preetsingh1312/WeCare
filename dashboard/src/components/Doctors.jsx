@@ -11,7 +11,11 @@ const Doctors = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
+<<<<<<< HEAD
           "https://we-care-vscm.vercel.app/api/v1/user/doctors",
+=======
+          "https://wecare-rcx6.onrender.com/api/v1/user/doctors",
+>>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
           { withCredentials: true }
         );
         setDoctors(data.doctors);
@@ -26,19 +30,19 @@ const Doctors = () => {
     return <Navigate to={"/login"} />;
   }
   return (
-    <section className="page doctors">
+    <section className='page doctors'>
       <h1>DOCTORS</h1>
-      <div className="banner">
+      <div className='banner'>
         {doctors && doctors.length > 0 ? (
           doctors.map((element) => {
             return (
-              <div className="card">
+              <div className='card'>
                 <img
                   src={element.docAvatar && element.docAvatar.url}
-                  alt="doctor avatar"
+                  alt='doctor avatar'
                 />
                 <h4>{`${element.firstName} ${element.lastName}`}</h4>
-                <div className="details">
+                <div className='details'>
                   <p>
                     Email: <span>{element.email}</span>
                   </p>
@@ -49,7 +53,8 @@ const Doctors = () => {
                     DOB: <span>{element.dob.substring(0, 10)}</span>
                   </p>
                   <p>
-                    Department: <span>{element.doctorDepartment}</span>
+                    Department:{" "}
+                    <span>{element.doctorDepartment}</span>
                   </p>
                   <p>
                     NIC: <span>{element.nic}</span>

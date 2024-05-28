@@ -13,7 +13,7 @@ import { errorMiddleware } from "./middlewares/erroeMiddleware.js";
 
 const app=express();
 
-const allowedOrigins = ["https://we-care-sepia.vercel.app"];
+const allowedOrigins = ["https://we-care-sepia.vercel.app","https://wecare-jxa9.onrender.com"];
 
 app.use(cors({
   origin: (origin, callback) => {

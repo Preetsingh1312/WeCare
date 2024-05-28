@@ -34,7 +34,10 @@ const AppointmentForm = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       const { data } = await axios.get(
-        "https://we-care-vscm.vercel.app/api/v1/user/doctors",
+<<<<<<< Hhttp://localhost:4000scm.vercel.app/api/v1/user/doctors",
+=======
+        "https://wecare-rcx6.onrender.com/api/v1/user/doctors",
+>>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
         { withCredentials: true }
       );
       setDoctors(data.doctors);
@@ -43,11 +46,14 @@ const AppointmentForm = () => {
     fetchDoctors();
   }, []);
   const handleAppointment = async (e) => {
-    e.preventDefault();
-    try {
+http://localhost:4000y {
       const hasVisitedBool = Boolean(hasVisited);
       const { data } = await axios.post(
+<<<<<<< HEAD
         "https://we-care-vscm.vercel.app/api/v1/appointment/post",
+=======
+        "https://wecare-rcx6.onrender.com/api/v1/appointment/post",
+>>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
         {
           firstName,
           lastName,
@@ -89,60 +95,63 @@ const AppointmentForm = () => {
 
   return (
     <>
-      <div className="container form-component appointment-form">
+      <div className='container form-component appointment-form'>
         <h2>Appointment</h2>
         <form onSubmit={handleAppointment}>
           <div>
             <input
-              type="text"
-              placeholder="First Name"
+              type='text'
+              placeholder='First Name'
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
             <input
-              type="text"
-              placeholder="Last Name"
+              type='text'
+              placeholder='Last Name'
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
           </div>
           <div>
             <input
-              type="text"
-              placeholder="Email"
+              type='text'
+              placeholder='Email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
-              type="number"
-              placeholder="Mobile Number"
+              type='number'
+              placeholder='Mobile Number'
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
           </div>
           <div>
             <input
-              type="number"
-              placeholder="NIC"
+              type='number'
+              placeholder='NIC'
               value={nic}
               onChange={(e) => setNic(e.target.value)}
             />
             <input
-              type="date"
-              placeholder="Date of Birth"
+              type='date'
+              placeholder='Date of Birth'
               value={dob}
               onChange={(e) => setDob(e.target.value)}
             />
           </div>
           <div>
-            <select value={gender} onChange={(e) => setGender(e.target.value)}>
-              <option value="">Select Gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
+            <select
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+            >
+              <option value=''>Select Gender</option>
+              <option value='Male'>Male</option>
+              <option value='Female'>Female</option>
             </select>
             <input
-              type="date"
-              placeholder="Appointment Date"
+              type='date'
+              placeholder='Appointment Date'
               value={appointmentDate}
               onChange={(e) => setAppointmentDate(e.target.value)}
             />
@@ -164,18 +173,21 @@ const AppointmentForm = () => {
                 );
               })}
             </select>
-            <select
+            {/* <select
               value={`${doctorFirstName} ${doctorLastName}`}
               onChange={(e) => {
-                const [firstName, lastName] = e.target.value.split(" ");
+                const [firstName, lastName] =
+                  e.target.value.split(" ");
                 setDoctorFirstName(firstName);
                 setDoctorLastName(lastName);
               }}
               disabled={!department}
             >
-              <option value="">Select Doctor</option>
+              <option value=''>Select Doctor</option>
               {doctors
-                .filter((doctor) => doctor.doctorDepartment === department)
+                .filter(
+                  (doctor) => doctor.doctorDepartment === department
+                )
                 .map((doctor, index) => (
                   <option
                     value={`${doctor.firstName} ${doctor.lastName}`}
@@ -184,13 +196,13 @@ const AppointmentForm = () => {
                     {doctor.firstName} {doctor.lastName}
                   </option>
                 ))}
-            </select>
+            </select> */}
           </div>
           <textarea
-            rows="10"
+            rows='10'
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            placeholder="Address"
+            placeholder='Address'
           />
           <div
             style={{
@@ -199,15 +211,19 @@ const AppointmentForm = () => {
               flexDirection: "row",
             }}
           >
-            <p style={{ marginBottom: 0 }}>Have you visited before?</p>
+            <p style={{ marginBottom: 0 }}>
+              Have you visited before?
+            </p>
             <input
-              type="checkbox"
+              type='checkbox'
               checked={hasVisited}
               onChange={(e) => setHasVisited(e.target.checked)}
               style={{ flex: "none", width: "25px" }}
             />
           </div>
-          <button style={{ margin: "0 auto" }}>GET APPOINTMENT</button>
+          <button style={{ margin: "0 auto" }}>
+            GET APPOINTMENT
+          </button>
         </form>
       </div>
     </>
