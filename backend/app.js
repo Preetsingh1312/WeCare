@@ -13,7 +13,7 @@ import { errorMiddleware } from "./middlewares/erroeMiddleware.js";
 
 const app=express();
 
-const allowedOrigins = ["https://wecare-fvev.onrender.com","https://dashboard-ile3.onrender.com/"];
+const allowedOrigins = ["https://wecare-fvev.onrender.com","https://dashboard-ile3.onrender.com"];
 
 app.use(cors({
   origin: allowedOrigins,
