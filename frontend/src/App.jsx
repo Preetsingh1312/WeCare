@@ -17,7 +17,6 @@ import { Context } from "./main";
 import axios from "axios";
 import Footer from "./components/Footer";
 
-<<<<<<< HEAD
 
 const App=()=>{
   const {isAuthenticated, setIsAuthenticated, setUser} = useContext(Context);
@@ -25,18 +24,6 @@ const App=()=>{
     const fetchUser = async()=>{
       try{
         const response = await axios.get("https://we-care-vscm.vercel.app/api/v1/user/patient/me", {withCredentials: true});
-=======
-const App = () => {
-  const { isAuthenticated, setIsAuthenticated, setUser } =
-    useContext(Context);
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await axios.get(
-          "https://wecare-rcx6.onrender.com/api/v1/user/patient/me",
-          { withCredentials: true }
-        );
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
         setIsAuthenticated(true);
         setUser(response.data.user);
       } catch (error) {
