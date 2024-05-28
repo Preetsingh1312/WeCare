@@ -13,7 +13,7 @@ const Dashboard = () => {
   useEffect(()=>{
     const fetchAppointments = async()=>{
       try {
-        const {data} = await axios.get("http://localhost:4000/api/v1/appointment/getall", {withCredentials: true});
+        const {data} = await axios.get("https://we-care-vscm.vercel.app/api/v1/appointment/getall", {withCredentials: true});
         setAppointments(data.appointments)
       } catch (error) {
         setAppointments([]);
@@ -25,7 +25,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+        `https://we-care-vscm.vercel.app/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
       );

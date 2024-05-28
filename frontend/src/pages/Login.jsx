@@ -15,7 +15,7 @@ const Login = () => {
   const handleLogin = async (e) =>{
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/api/v1/user/login", {email, password, confirmPassword, role: "Patient"}, {withCredentials:true, headers: {"Content-Type": "application/json"}
+      const response = await axios.post("https://we-care-vscm.vercel.app/api/v1/user/login", {email, password, confirmPassword, role: "Patient"}, {withCredentials:true, headers: {"Content-Type": "application/json"}
     });
     toast.success(response.data.message);
     setIsAuthenticated(true);

@@ -11,7 +11,7 @@ const NavBar = () => {
   const {isAuthenticated, setIsAuthenticated} = useContext(Context);
   const navigateTo = useNavigate();
   const handleLogout = async()=>{
-    await axios.get("http://localhost:4000/api/v1/user/patient/logout", {withCredentials:true}).then(res =>{
+    await axios.get("https://we-care-vscm.vercel.app/api/v1/user/patient/logout", {withCredentials:true}).then(res =>{
     toast.success(res.data.message);
     setIsAuthenticated(false);
     }).catch((err)=>{

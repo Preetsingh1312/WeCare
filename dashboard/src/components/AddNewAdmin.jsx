@@ -23,7 +23,7 @@ const AddNewAdmin = () => {
   const handleAddNewAdmin = async(e) =>{
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/api/v1/user/admin/addnew", {firstName, lastName, email, phone, nic, dob, gender, password}, {withCredentials:true, headers: {"Content-Type": "application/json"}
+      const response = await axios.post("https://we-care-vscm.vercel.app/api/v1/user/admin/addnew", {firstName, lastName, email, phone, nic, dob, gender, password}, {withCredentials:true, headers: {"Content-Type": "application/json"}
     });
     toast.success(response.data.message);
     navigateTo("/");
