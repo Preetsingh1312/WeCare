@@ -18,23 +18,11 @@ import axios from "axios";
 import "./App.css";
 
 const App = () => {
-<<<<<<< HEAD
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
   useEffect(()=>{
     const fetchUser = async()=>{
       try{
-        const response = await axios.get("https://we-care-vscm.vercel.app/api/v1/user/admin/me", {withCredentials: true});
-=======
-  const { isAuthenticated, setIsAuthenticated, setUser } =
-    useContext(Context);
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await axios.get(
-          "https://wecare-rcx6.onrender.com/api/v1/user/admin/me",
-          { withCredentials: true }
-        );
->>>>>>> b1342a04433d3712c072012d481543d238e6a6b5
+        const response = await axios.get("https://wecare-1.onrender.com/api/v1/user/admin/me", {withCredentials: true});
         setIsAuthenticated(true);
         setUser(response.data.user);
       } catch (error) {
